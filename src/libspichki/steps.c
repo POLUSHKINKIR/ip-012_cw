@@ -28,4 +28,4 @@ void makeStepComputer(int* i)
         n = *i;
     printf("Компьютер взял: %d\n", n);
     *i -= n;
-}   
+}
