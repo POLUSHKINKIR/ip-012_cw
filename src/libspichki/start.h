@@ -3,4 +3,7 @@
 
 void start();
 
+int makeStep(int* count);
+
+
 #endif
