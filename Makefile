@@ -36,6 +36,7 @@ $(OBJ_DIR)/%.o: %.cpp
 
 clean:
 	$(RM) $(APP_PATH) $(LIB_PATH) 
-	find $(OBJ_DIR) -name '.[od]' -exec $(RM) '{}' \;
+	find $(OBJ_DIR) -name '*.o' -exec $(RM) '{}' \;
+	find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;
 
 -include $(DEPS)
