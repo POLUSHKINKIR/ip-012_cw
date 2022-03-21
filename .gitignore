@@ -1,0 +1,5 @@
+bin/spichki
+*.a
+*.o
+*.d
+*.swp
