@@ -11,14 +11,30 @@ int makeStep(int* i)
     char str[10];
     fgets(str, 10, stdin);
     n = atoi(str);
-    if (n >= 1 && n <= 10 && n <= *i) {
-        printf("Вы взяли %d\n", n);
-        *i -= n;
+    if (n >= 1 && n <= 10 && n <= *i) 
+	{
+        printf("Вы взяли %d\n",   n);
+        *i -=  n;
     } else {
         printf("Пожалуйста, введите правильное число спичек!\n");
         return -1;
     }
     return 0;
+}
+
+int getRandom()
+{
+    return rand() % 10 + 1;
+}
+
+void makeStepComputer(int* i)
+{
+    int n;
+    n = getRandom();
+    if (n > *i)
+        n = *i;
+    printf("Компьютер взял: %d\n", n);
+    *i -= n;
 }
 
 void start()
@@ -33,10 +49,13 @@ void start()
         printf("----------------------------\n");
         printf("В куче осталось %d спичек!\n", i);
 
-        if (player == 1) {
+        if (player == 1) 
+		{
             if (makeStep(&i) == 0)
                 player *= -1;
-        } else {
+        } 
+		else 
+		{
             makeStepComputer(&i);
             player *= -1;
         }
