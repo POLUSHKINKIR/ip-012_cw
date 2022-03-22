@@ -24,7 +24,10 @@ void start()
         printf("В куче осталось %d спичек!\n", i);
 
         if (player == PLAYER_ONE) {
-            if (makeStep(&i) == EXIT_SUCCESS)
+            int code = makeStep(&i);
+            if (code == EXITCODE_FORCED)
+                return;
+            if (code == EXITCODE_SUCCESS)
                 player = PLAYER_TWO;
         } else {
             makeStepComputer(&i);
