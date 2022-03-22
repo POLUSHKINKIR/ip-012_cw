@@ -10,7 +10,8 @@ int makeStep(int* i)
     printf("Возьмите от 1 до 10 спичек:\n>");
     char str[128];
     fgets(str, 128, stdin);
-	if (str[0] == 'q') return EXITCODE_FORCED;
+    if (str[0] == 'q')
+        return EXITCODE_FORCED;
     n = atoi(str);
     if (n >= 1 && n <= 10 && n <= *i) {
         printf("Вы взяли %d\n", n);
