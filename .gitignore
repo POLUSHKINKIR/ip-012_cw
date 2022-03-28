@@ -1,4 +1,5 @@
 bin/spichki
+bin/spichki-test
 *.a
 *.o
 *.d
